@@ -1,0 +1,35 @@
+services:
+
+  backend:
+    build: ./backend
+    ports: ["8000:8000"]
+    develop:
+      watch:
+
+        - action: sync
+          path: ./backend
+          target: /app
+          ignore: [".venv/", "__pycache__/"]
+        - action: rebuild
+          path: ./backend/pyproject.toml
+
+  frontend:
+    build: ./frontend
+    ports: ["3000:3000"]
+    develop:
+      watch:
+
+        - action: sync
+          path: ./frontend
+          target: /app
+          ignore: ["node_modules/", ".next/"]
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
