@@ -1,7 +1,11 @@
-def main():
-    print("Hello from backend!")
+from fastapi import FastAPI
 
+app = FastAPI()
 
-if __name__ == "__main__":
-    main()
-    
+@app.get("/")
+def read_root():
+    return {"status": "Backend is Online", "framework": "FastAPI"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}

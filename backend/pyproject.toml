@@ -5,7 +5,7 @@ description = "Python based backend using FastAPI framework. Also uses pydantic 
 requires-python = ">=3.13"
 dependencies = [
     "alembic>=1.18.4",
-    "fastapi>=0.129.0",
+    "fastapi[standard]>=0.129.0",
     "pydantic>=2.12.5",
     "sqlmodel>=0.0.34",
     "uvicorn[standard]>=0.41.0",
