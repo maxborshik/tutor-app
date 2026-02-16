@@ -1,0 +1,12 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Python based backend using FastAPI framework. Also uses pydantic for input validation, sqlmodel for seamless sql table building, alembic for version management and updates to sql and uvicorn to handle incoming http requests."
+requires-python = ">=3.13"
+dependencies = [
+    "alembic>=1.18.4",
+    "fastapi>=0.129.0",
+    "pydantic>=2.12.5",
+    "sqlmodel>=0.0.34",
+    "uvicorn[standard]>=0.41.0",
+]
