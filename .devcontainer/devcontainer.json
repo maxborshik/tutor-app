@@ -10,5 +10,6 @@
         "ms-vscode.vscode-typescript-next"
       ]
     }
-  }
+  },
+  "postCreateCommand": "uv sync --project backend && cd frontend && npm install"
 }

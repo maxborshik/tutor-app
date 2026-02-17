@@ -16,4 +16,4 @@ RUN uv sync --frozen --no-install-project
 COPY . .
 
 # Start FastAPI in development mode
-CMD ["uv", "run", "fastapi", "dev", "--host", "0.0.0.0", "main.py"]
+CMD ["uv", "run", "fastapi", "dev", "--host", "0.0.0.0", "backend/main.py"]
