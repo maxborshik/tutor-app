@@ -1,0 +1,42 @@
+{
+  "name": "Tutor App - Pro Workspace",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "backend",
+  "workspaceFolder": "/app",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "configureZshAsDefaultShell": true,
+      "installZsh": true
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // CLEAN UI: Minimalist focus mode
+        "workbench.activityBar.location": "top",
+        "editor.minimap.enabled": false,
+        "workbench.statusBar.visible": true,
+        "editor.stickyScroll.enabled": true,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "python.defaultInterpreterPath": "/app/backend/.venv/bin/python",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        // TOOLS FOR YOU
+        "ms-python.python",
+        "ms-vscode.vscode-typescript-next",
+        "charliermarsh.ruff", // Fast Python linting
+        "ms-azuretools.vscode-docker", // Container management
+        "mtxr.sqltools", // SQL interface for SQLModel/Alembic
+        "mtxr.sqltools-driver-pg", // Postgres driver
+        "christian-kohler.path-intellisense", // Path autocomplete
+        "PKief.material-icon-theme" // Nicer icons for folders
+      ]
+    }
+  },
+  "postCreateCommand": "if [ ! -d 'frontend/node_modules' ]; then cd frontend && npm install; fi && uv sync --project backend"
+}

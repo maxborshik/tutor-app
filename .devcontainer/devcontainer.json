@@ -1,42 +1,14 @@
 {
-  "name": "Tutor App - Pro Workspace",
-  "dockerComposeFile": [
-    "../docker-compose.yml"
-  ],
+  "name": "Tutor-App-Debug",
+  "dockerComposeFile": ["../docker-compose.yml"],
   "service": "backend",
   "workspaceFolder": "/app",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
-    "ghcr.io/devcontainers/features/common-utils:1": {
-      "configureZshAsDefaultShell": true,
-      "installZsh": true
-    }
-  },
+  // REMOVE all features and extensions for this one test
   "customizations": {
     "vscode": {
-      "settings": {
-        // CLEAN UI: Minimalist focus mode
-        "workbench.activityBar.location": "top",
-        "editor.minimap.enabled": false,
-        "workbench.statusBar.visible": true,
-        "editor.stickyScroll.enabled": true,
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "python.defaultInterpreterPath": "/app/backend/.venv/bin/python",
-        "editor.formatOnSave": true
-      },
-      "extensions": [
-        // TOOLS FOR YOU
-        "ms-python.python",
-        "ms-vscode.vscode-typescript-next",
-        "charliermarsh.ruff", // Fast Python linting
-        "ms-azuretools.vscode-docker", // Container management
-        "mtxr.sqltools", // SQL interface for SQLModel/Alembic
-        "mtxr.sqltools-driver-pg", // Postgres driver
-        "christian-kohler.path-intellisense", // Path autocomplete
-        "PKief.material-icon-theme" // Nicer icons for folders
-      ]
+      "settings": {},
+      "extensions": ["ms-python.python"] // Only ONE extension
     }
   },
-  "postCreateCommand": "uv sync --project backend && cd frontend && npm install"
+  "postCreateCommand": "echo 'Stable Baseline Reached'"
 }
