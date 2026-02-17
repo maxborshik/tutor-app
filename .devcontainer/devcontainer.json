@@ -7,7 +7,7 @@
   "customizations": {
     "vscode": {
       "settings": {},
-      "extensions": ["ms-python.python"] // Only ONE extension
+      "extensions": [] // Only ONE extension
     }
   },
   "postCreateCommand": "echo 'Stable Baseline Reached'"
