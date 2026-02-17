@@ -2,13 +2,16 @@ services:
 
   backend:
     build: ./backend
+    volumes:
+      - .:/workspace:cached
     ports: ["8000:8000"]
+    depends_on: [db]
     develop:
       watch:
 
         - action: sync
           path: ./backend
-          target: /app
+          target: /workspace/backend
           ignore: [".venv/", "__pycache__/"]
         - action: rebuild
           path: ./backend/pyproject.toml
@@ -21,7 +24,7 @@ services:
 
         - action: sync
           path: ./frontend
-          target: /app
+          target: /workspace/frontend
           ignore: ["node_modules/", ".next/"]
 
   db:
