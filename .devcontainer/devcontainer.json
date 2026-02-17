@@ -2,7 +2,7 @@
   "name": "Tutor App Dev Container",
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "backend",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/app",
   "customizations": {
     "vscode": {
       "extensions": [
