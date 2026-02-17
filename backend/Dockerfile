@@ -9,4 +9,4 @@ RUN uv sync --frozen --no-install-project
 
 COPY . .
 
-CMD ["uv", "run", "fastapi", "dev", "--host", "0.0.0.0", "backend/main.py"]
+CMD ["uv", "run", "--project", "backend", "fastapi", "dev", "backend/main.py", "--host", "0.0.0.0"]
