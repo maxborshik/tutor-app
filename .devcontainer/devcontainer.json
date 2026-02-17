@@ -2,7 +2,7 @@
   "name": "Tutor App Dev Environment",
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "backend",
-  "workspaceFolder": "/app",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -12,5 +12,5 @@
       ]
     }
   },
-  "postCreateCommand": "uv sync && cd frontend && npm install"
+  "postCreateCommand": "uv sync --project backend && cd frontend && npm install" 
 }
