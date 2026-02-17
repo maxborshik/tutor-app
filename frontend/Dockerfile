@@ -1,6 +1,6 @@
 FROM node:20-slim
 
-WORKDIR /app/frontend
+WORKDIR /app
 
 # Copy package files first
 COPY package.json package-lock.json ./
